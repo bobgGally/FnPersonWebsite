@@ -1,0 +1,93 @@
+@use '@angular/material' as mat;
+$lightBG:#7ba3b1;
+$darkBG:#1d676d;
+$semilightBG:#63b6bc;
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-primary0: (
+    50 : #e4eded,
+    100 : #bbd1d3,
+    200 : #8eb3b6,
+    300 : #619599,
+    400 : #3f7e83,
+    500 : #1d676d,
+    600 : #1a5f65,
+    700 : #15545a,
+    800 : #114a50,
+    900 : #0a393e,
+    A100 : #76efff,
+    A200 : #43e9ff,
+    A400 : #10e3ff,
+    A700 : #00d9f6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-secondary0: (
+    50 : #ecf6f7,
+    100 : #d0e9eb,
+    200 : #b1dbde,
+    300 : #92ccd0,
+    400 : #7ac1c6,
+    500 : #63b6bc,
+    600 : #5bafb6,
+    700 : #51a6ad,
+    800 : #479ea5,
+    900 : #358e97,
+    A100 : #e2fcff,
+    A200 : #aff8ff,
+    A400 : #7cf3ff,
+    A700 : #63f1ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+
+
+$my-primary: mat.define-palette($md-primary0);
+$my-accent: mat.define-palette($md-secondary0);
+
+// The "warn" palette is optional and defaults to red if not specified.
+$my-warn: mat.define-palette(mat.$red-palette);
+
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn: $my-warn,
+ ),
+ typography: mat.define-typography-config(),
+ density: 0,
+));
+@include mat.all-component-themes($my-theme);
